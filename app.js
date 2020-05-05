@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-
+var Messageresponse = "SMS Sent";
 var AWS = require('aws-sdk');
 
 app.get('/', (req, res) => {
@@ -24,7 +24,8 @@ app.get('/', (req, res) => {
 
     publishTextPromise.then(
         function (data) {
-            res.end(JSON.stringify({ MessageID: data.MessageId }));
+
+         "test";
         }).catch(
             function (err) {
                 res.end(JSON.stringify({ Error: err }));
